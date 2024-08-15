@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href='{{url_for("static",filename = "styles/m_panel.css")}}'>
+</head>
+<header>
+    <div class="u_header borders">
+        <div class="u_name_div borders" style="display: flex;justify-content: center;">
+            <img height="70px" src="/static/profile_png1.png" alt="">
+            <h3>Welcome,<br> {{v_uname}}</h3>
+        </div>
+        <div>
+            <h1>Welcome to Literary Paradise</h1>
+            <form action="/search" method="POST">
+            <input class="h_search_box" type="text" name="search_box" placeholder="Enter Book Name to search Here">
+            <button class="sbtn"><img height="15px" src="/static/search.png" alt=""> </button>
+        </form>
+        </div>
+        <div class="cart_div borders">
+            <div class="cart_val ">
+                <p>{{cart}}</p>
+            </div>
+            <div><button onclick="window.location.replace('/checkout')" ><img height="70px" src="/static/cart1.png" alt="">
+                    <p>Cart</p>
+                </button></div>
+        </div>
+
+    </div>
+</header>
+<body>
+        <div style="border: 1px solid red;" class="main_div1">
+            <h1>Items Added in cart<hr></h1>
+            {{k}}
+    </div>
+</body>
+</html>

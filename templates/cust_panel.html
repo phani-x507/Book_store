@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'merriweather';
+        }
+
+        .borders {
+            border: 1px solid transparent;
+        }
+
+        .u_header {
+            height: 15vh;
+            width: 100%;
+            background-color: #0FA400;
+            border-radius: 7px;
+            margin: 0px 0px 0px 0px;
+            display: flex;
+            justify-content: space-between;
+            min-height: 100px;
+
+
+        }
+
+        .u_header h1 {
+            color: white;
+            margin-bottom: 3px;
+        }
+
+        .h_search_box {
+            width: 80%;
+            background-color: transparent;
+            border: 1px solid #0E9900;
+            border-radius: 30px;
+            height: 20px;
+            outline: none;
+            padding-left: 15px;
+            background-color: #0E9900;
+            color: #fff;
+            font-family: 'merriweather';
+        }
+
+        input::placeholder {
+            font-size: 10px;
+            color: lightgreen;
+        }
+
+        .sbtn {
+            background-color: transparent;
+            border: 0px solid #0E9900;
+            background-color: #0E9900;
+            border-radius: 30px;
+            width: 50px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .u_name_div {
+            width: 300px;
+            justify-content: center;
+            align-items: center;
+            background-color: #0E9900;
+
+        }
+
+        .u_name_div h3 {
+            line-height: 30px;
+            color: #fff;
+        }
+
+        .cart_div {
+            width: 300px;
+            background-color: #0E9900;
+            display: flex;
+            justify-content: end;
+
+
+        }
+
+        .cart_div p {
+            margin: 0px;
+            padding: 0px;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .cart_div button {
+            background-color: transparent;
+            border: 0px solid transparent;
+            font-family: 'merriweather';
+            cursor: pointer;
+            height: 100px;
+            transition-duration: 0.2s;
+        }
+
+        .cart_div button:hover {
+            background-color: #0FA400;
+            border-radius: 7px;
+        }
+
+        .cart_val p {
+            background-color: white;
+            color: black;
+            padding: 5px;
+            border-radius: 30px;
+            margin: 0px;
+            text-align: center;
+            font-weight: bold;
+
+        }
+
+        .cart_val {
+            position: relative;
+            left: 65px;
+            top: 10px;
+            height: 25px;
+            cursor: default;
+
+        }
+
+        .main_div1 {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+        }
+
+        .cat_div {
+            height: 82vh;
+            min-width: 300px;
+            background-color: #047831;
+            border-radius: 2px;
+            color: #fff;
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: center;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .cat_div h2 {
+            width: 80%;
+            text-align: center;
+        }
+
+        .drop_btn {
+            color: white;
+            background-color: #0E9900;
+            border: 0px solid transparent;
+            height: 40px;
+            width: 90%;
+            border-radius: 30px;
+            font-family: 'merriweather';
+            font-size: 13px;
+            margin-bottom: 5px;
+            margin-top: 2px;
+            width: 100%;
+        }
+
+        .drop_btn:hover {
+            cursor: pointer;
+            background-color: #0FA400;
+        }
+
+        .cat_btn_div {
+            width: 90%;
+            margin: auto;
+            overflow-y: scroll;
+            display: block;
+            height: 100%;
+            scrollbar-color: red;
+
+        }
+
+        .books_view {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            overflow-y: scroll;
+        }
+        .borders {
+            border: solid 1px transparent;
+        }
+
+        .sdiv {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-content: flex-start;
+            justify-content: space-evenly;
+
+        }
+
+        .book_cont {
+
+            width: 230px;
+            padding: 5px;
+            font-family: 'merriweather';
+            margin: 13px;
+            cursor: pointer;
+            background-color: #F4ECF7;
+            border: 1px solid lavender;
+            box-shadow: 0px 0px 10px 1px lavenderblush ;
+            transition-duration:0.2s ;
+        }
+        .book_cont:hover{
+            width: 240px;
+        }
+
+        .book_cont p {
+            margin: 5px;
+            line-height: 23px;
+        }
+
+        .c1 {
+            display: flex;
+            align-content: flex-end;
+            justify-content: space-evenly;
+        }
+        .add_cart_btn{
+            height: 40px;
+            min-width: 100px;
+            border: 1px solid lavender;
+            background-color: coral;
+            color: white;
+            font-family: 'merriweather';
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<header>
+    <div class="u_header borders">
+        <div class="u_name_div borders" style="display: flex;justify-content: center;">
+            <img height="70px" src="/static/profile_png1.png" alt="">
+            <h3>Welcome,<br> {{v_uname}}</h3>
+        </div>
+        <div>
+            <h1>Welcome to Literary Paradise</h1>
+            <form action="/search" method="POST">
+            <input class="h_search_box" type="text" name="search_box" placeholder="Enter Book Name to search Here">
+            <button class="sbtn"><img height="15px" src="/static/search.png" alt=""> </button>
+        </form>
+        </div>
+        <div class="cart_div borders">
+            <div class="cart_val ">
+                <p>{{cart}}</p>
+            </div>
+            <div><button onclick="window.location.replace('/checkout')" ><img height="70px" src="/static/cart1.png" alt="">
+                    <p>Cart</p>
+                </button></div>
+        </div>
+
+    </div>
+</header>
+<script>
+
+    function val() {
+        val1 = document.getElementById('t1').value
+        document.getElementById('div1').className = val1
+        val1 = document.getElementById('t1').style.display = 'none'
+    }
+
+</script>
+
+<body onload="val()">
+    <!-- {{details}}
+    {{is_ok}}
+    <button id="t1" value="{{theme}}"></button>
+    <button>Clickhere</button> -->
+    <!-- <div id="div1" class="class1">
+
+    </div> -->
+
+    <div class="main_div1">
+        <div class="cat_div">
+            <h2>Categories
+                <hr>
+            </h2>
+
+            <div class="cat_btn_div borders">
+                {% for i in books %}
+                <form action="/cat_search" , method="post">
+                <button class="drop_btn" name="drop_btn" value="{{i}}">{{i}}</button>
+            </form>
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="books_view borders">
+            <div class="sdiv borders">
+
+                {% for i in alter_list %}
+                <div class="book_cont borders ">
+                    <div class="c1 borders" style="width: 100%;">
+                        <img width="150px" src='{{url_for("static",filename=i[4])}}' alt="">
+                    </div>
+                    <p style="text-align: center;font-size: 18px;font-weight: 400;">{{i[0]}}</p>
+                    <p style="text-align: center;font-size: 12px;">Author : {{i[1]}}</p>
+                    <p style="text-align: center;color:coral;font-size: 25px;font-weight: 800;">{{i[2]}} INR </p>
+                    <p style="font-size: 14px;">Category : {{i[3]}}</p>
+                    <form action="/add_to_cart" method="post">
+                        <button class="add_cart_btn" style="margin-left: 60px;"  name="add_cart_btn" value="{{i[0]}}">Add to cart</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

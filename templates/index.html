@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The E-Book Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #ad5389;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #3c1053, #ad5389);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: 'Merriweather','sans';
+
+        }
+
+        .borders {
+            border: 1px solid transparent;
+        }
+
+        .login_div {
+            width: 850px;
+            height: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            box-shadow: 0px  0px 10px 0px pink;
+            border: 1px solid lavender;
+            display: flex;
+            padding: 10px;
+        }
+        .login_div_left{
+            width: 55%;
+            padding: 10px;
+        }
+        .login_div_left h1{
+            text-shadow: 1px 3px 7px lavender;
+        }
+        .login_div_left P {
+            font-size: 15px;
+            font-weight: 400;
+            color:#747A7D  ;
+            line-height: 1.5;
+        }
+        .l_d_l_img{
+            width: 50%;
+            margin: auto;
+            height: 300px;
+            width: 300px;
+        }
+        .l_d_l_img img{
+            border-radius: 30px;
+            box-shadow: 0px 20px 10px 1px #F9EBEA;
+        }
+        .login_div_right{
+            width: 44%;
+            padding: 10px;
+            justify-items: center;
+            text-align: center;
+            border-left: 1px solid lavender;
+        }
+        .login_div_right h1{
+            width: 70%;
+            text-align: center;
+            margin: auto;
+            color: #2C1277 ;
+            margin-top: 50px;
+        }
+        .ctype1{
+            height: 30px;
+            width: 70%;
+            border: 1px solid lavender;
+            outline: none;
+            font-family: 'Merriweather','sans';
+            padding: 3px;
+            transition-duration: 0.2s;
+        }
+        .ctype1:focus{
+            border: 0px solid transparent;
+            border-bottom: 3px solid lavender ;
+
+        }
+        .btype1{
+            height: 40px;
+            min-width: 140px;
+            border: 0px solid lavender;
+            background-color: #CF2D2D ;
+            transition-duration:0.2s ;
+            color: white;
+            font-family: 'Merriweather','sans';
+            
+
+        }
+        .btype1:hover{
+            cursor: pointer;
+            background-color: #E74C3C ;
+
+        }
+        .l_btn_margins{
+            margin-top: 30px;
+        }
+        #l_r_div_regform{
+            display: none ;
+        }
+    </style>
+</head>
+<script>
+    function show_registration(){
+        document.getElementById("l_r_div_signin").style.display = "none"
+        document.getElementById("l_r_div_regform").style.display = "block"
+        
+    }
+
+</script>
+<body onload="default1()">
+    <div class="login_div borders">
+        <div class="login_div_left borders">
+            
+            <h1>
+                Welcome to E-Book Store
+                
+                
+            </h1><hr style="width: 30%;"><p style="padding: 10px;">"Unlock a world of literary treasures - shop, read, and enjoy your favorite books with ease on our user-friendly online bookstore."</p>
+            <div class="l_d_l_img borders">
+                <img height="100%" src="/static/cover.jpg" alt="">
+            </div>
+           
+            <button onclick="show_registration()" style="float: right;" class="btype1 l_btn_margins" >Register </button><br>
+            <p id="hello" style="color: red;">{{message}}</p>
+        </div>
+        
+        <div id="l_r_div_signin" class="login_div_right borders ">
+            
+            <form action="/login" method="post">
+            <h1 align="center">Sign In <hr></h1>
+            <img height="100px" src="/static/login_png.png" alt="">
+            <p>Username:</p>
+            <input name="username" class="ctype1" type="text">
+            <p>Password:</p>
+            <input name="pass" class="ctype1" type="password"><br>
+            <button class="btype1 l_btn_margins" >Sign In </button><br>
+        </form>
+        </div>
+
+        <div id="l_r_div_regform" class="login_div_right borders ">
+            <form action="/register" method="post">
+            <h1 align="center">Registration <hr></h1>
+            <p>Username:</p>
+            <input name="uname" class="ctype1" type="text">
+            <p>Email:</p>
+            <input name="email" class="ctype1" type="text">
+            <p>Mobile Number:</p>
+            <input name="mobile" class="ctype1" type="number">
+            <p>Password:</p>
+            <input name="pass" class="ctype1" type="password"><br>
+            <button class="btype1 l_btn_margins" >Register </button><br>
+        </form>
+           
+        </div>
+    </div>  
+</body>
+
+</html>
